@@ -1,0 +1,218 @@
+<!--
+   1) Crie uma página em HTML que permita que um usuário entre com dois números e escolha uma operação a realizar com esses números. Obrigatório implementar 2 operações no mínimo. Será avaliado o código javascript, a apresentação da página (CSS) e a estrutura do HTML.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trabalho AV2">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Marília Silva | Maliarte">
+    <title>Construção de Aplicações Web - FAETERJ</title>
+    <style>
+           #layout
+           {
+            background-color:rgb(255, 255, 255);
+           } 
+           p
+           {
+              color:turquoise;
+               
+           }
+           p:hover
+           {
+              color:rgb(219, 64, 224);
+               
+           }
+           h1 
+           {
+               color:rgb(17, 0, 251);
+               text-align: center;
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           }
+           
+           h6 
+           {
+                text-align: center;
+                opacity: 20%;
+           }
+           span
+           {
+               color:white;
+
+           }
+          
+           #wrapper 
+           {
+               padding: 50px;
+               text-align:center;
+           }
+           
+           footer{
+              height: 100px;
+              margin: 40px;
+              color: white;
+           }
+           hr
+           {
+            width: 280px;
+           }
+          
+           .mybtn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            }
+            .mybtn:hover {
+            background-color: #f44336;
+            color: white;
+            }
+            .mybtnCubeBlue {
+               background-color: #2255ce; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            }
+            .mybtnCubeYel
+            {
+            background-color: #e4d61d; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            }
+            .mybtnCubeRed
+            {
+            background-color: #e41d1d; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            }
+            .mybtnCubeGreen
+            {
+            background-color: #02f63f; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            }
+    </style>
+</head>
+
+<body id="layout">
+    <script> 
+    function calc(e){
+   
+        var operacao = e.value;
+        
+        var n1=parseFloat(document.getElementById("n1").value);
+        var n2=parseFloat(document.getElementById("n2").value);
+        
+        var calculo = eval(n1+operacao+n2);
+     
+        if(!isNaN(calculo)){
+           alert(calculo);
+        }
+       
+     }
+     
+     function ola(nome){
+        var f=document.getElementById("formi");
+        var txt = f.txtnome;
+        txt.value = "Bem-vindo(a), " + txt.value;
+     }
+     
+     function limpar(){
+        //alert("1");
+        var f=document.getElementById("formi");
+        var n1 = f.n1;
+        var n2 = f.n2;
+        n1.value = "";
+        n2.value = "";
+     }
+    </script>
+<body>
+   <div id="wrapper">
+      <form id="formi"  >
+        <div id="container">
+           <div id="header"> 
+              <h1>Bem vindo(a) à MEID!</h1>  
+              <pre> Ainda não nos conhece? Venha se Divertir!
+                 <a style="color:red" href="https://maliarte.com.br">Saiba Mais</a>
+              </pre>
+           </div>
+           <div class="bloco">
+            <!-- <span>Nome:</span> -->
+             <input type="text" name="txtnome" placeholder="Seu nome aqui.">
+             <input id="enviar" type="button" value="Enviar" onClick="ola('Ola')">
+            
+          </div>
+<hr>
+           <div id="Envelope">
+              
+              <br>
+              <div class="bloco1">
+                <h2>Informe dois números<br><br>
+                 <input type="text" size="9" id="n1" placeholder="Número 1">
+                 <input type="text" size="9"  id="n2" placeholder="Número 2"><br>
+                 <h3 style="opacity: 80%;">Escolha:<br>
+                 <input class="mybtnCubeBlue" type="button" value="+" onClick="calc(this)">
+                 <input class="mybtnCubeYel"type="button" value="-" onClick="calc(this)"><br><br>
+                 <input class="mybtnCubeRed"type="button" value="*" onClick="calc(this)">
+                 <input class="mybtnCubeGreen"type="button" value="/" onClick="calc(this)">
+                  </h3>
+                </h2><br><br>
+                 <input class="mybtn" type="button" value="Limpar" onClick="limpar()"/><input class="mybtn" type="button" value="Enviar" onClick="ola('Ola')"><br>
+                 <hr>
+              </div>
+           </div> <!-- Envelope-->
+     </form>
+   </div> <!-- encerra wraper content-->     
+   <br>
+   <br>
+   <br>
+   <footer><p>Desenvolvido por Marília Silva. | 2 Caw |</p></footer> 
+</body>
+</html>
