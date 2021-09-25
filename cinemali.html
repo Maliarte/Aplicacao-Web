@@ -1,0 +1,194 @@
+<!-- css inline=> na tag <tag style="background-image: caminho;"
+
+SECTION COM ARTICLES NÃO MAIS DIV [GENERICA]
+
+
+05.04.2021 - CSS -tipos de seletores
+
+CSS 
+{ 
+interno tag <STYLE> on <HEAD> - recursivity 
+}
+{externo tag <link rel="stylesheet" href="#.cc" title="high contrast">
+
+or
+
+.elemento<import>
+-->
+
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+	<meta name="Marília">
+	<title> O Cinema como a Cidade nunca viu!</title>
+	<!-- STYLE CSS interno -->
+	<style type="text/css">
+		H1 { 
+		color:yellow; 
+		border:dotted; 
+		text-align:center; 
+		} 
+		p { 
+		font-style: normal; 
+		color: yellow; 
+		}  
+		H2 {
+		text-align:center; 
+		
+		}
+		
+		H4 {
+		text-align:center; 
+		}
+		
+	</style>
+
+</head>
+<body style="background-color:red"> 
+<!--<h1 style="color:yellow" border="dotted" align="center"> CineMaLI </h1>-->
+<h1> CineMaLIARTE </h1> 
+<h2> O Cinema como a Cidade nunca viu! </h2>
+
+	
+<!-- 
+=========================================================
+MENU de NAV
+
+<header>
+	<nav align="center">
+		<ul style="list-style-type: none">
+			<li><a href="#"> Sessões</a></li>
+			<li><a href="#"> Lançamentos</a></li>
+			<li><a href="#"> Promoções</a></li>
+		</ul>
+	</nav>     
+<header>
+<h1 style="color:white" align="center">Últimos Lançamentos</h1> css inline
+
+
+==========================================================
+-->	
+
+
+<h1>Últimos Lançamentos </h1> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nsiq8QaYHAI" title="Maliarte" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5awD0qj1bpY" title="Maliarte" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r0u5z3tbMOU" title="Maliarte" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/boFM8kmadZU" title="Maliarte" allowfullscreen=""></iframe>
+<br>
+<br>
+<h1> Contate-nos! </h2>
+<br>
+<br>
+<form>
+				<fieldset name="userinfo">
+				<legend>Informações do usuário</legend>
+				<label for="nome">Nome</label>
+				<input type="text" name="nome" size="80"><br><br>
+				<label for="email">E-mail</label>
+				<input type="text" name="email" size="80"><br><br>
+				<label for="celular">Celular</label>
+				<input type="text" name="celular" size="80"><br><br>
+				<label for="nascimento">Selecione sua data de nascimento:</label><br>
+				<input type="date" name="nascimento">
+				</fieldset>
+				
+				<fieldset name="compras">
+				<legend>Filmes</legend>
+				Marque os produtos que costuma comprar:<br>
+				<input type="checkbox" name="compra" value="comida" checked>Ação<br>
+				<input type="checkbox" name="compra" value="eletrod"> Aventura<br>
+				<input type="checkbox" name="compra" value="roupas">Drama<br>
+				<input type="checkbox" name="compra" value="Higiene">Comédia<br>
+				Marque uma opção - Preferência de Lanche:<br>
+				<input type="radio" name="cor" value="preto">Pipoca<br>
+				<input type="radio" name="cor" value="rosa">Biscoito<br>
+				<input type="radio" name="cor" value="verde">Amedoim<br>
+				</fieldset>
+				<br>
+				<label for="filme"> Selecione o filme:</label>
+				<select name="filme">
+					<option disabled="" selected="" value="">--Selecione um filme--</option>
+					<option value="Maquette">Maquette</option>
+					<option value="The last Guardian">The last Guardian</option>
+					<option value="Rachet and Clank">Rachet and Clank</option>
+					<option value="O cristal encantado">O cristal encantado</option>
+				</select>
+				<br>
+				<br>
+				<br>
+				<label for="data">Selecione a data:</label>
+				<br>
+				<br>
+							
+				<input type="date" name="data">
+				<br>
+				<br>
+				<label for="comida"> Gostaria de comprar comida em nosso estabelecimento?</label>
+				<br>
+				<form>
+					<input type="radio" name="comida" value="sim">Sim<br>
+					<input type="radio" name="comida" value="nao">Não<br>
+					<input type="radio" name="comida" value="naosei">Não sei<br>
+				</form>
+		
+		<br>
+
+ <!-- 
+ Caixa de seleção não é input é SELECT
+ optiogroup  - alternativas dentro de cada grupo
+ 
+ 
+			<fieldset name="Sugestões">
+			<legend>Sugestões</legend>
+			<br>
+			<select name="sugestões">
+				<option value="advogado">Ambiente ruim</option>
+				<option value="medico">Ambiente médio</option>
+				<option value="professor">Ambiente Suportável</option>
+				<option value="estudante">Banaca</option>
+			</select>
+		</fieldset>
+-->
+
+		
+		<button type="submit" value="submit">Confirmar</button>
+		<button type="reset" value="reset">limpar</button>
+		<br>
+		<br>
+			
+<fieldset name="feedback">
+				<legend>Obtendo dados</legend>
+				<label for="presença">É a sua primeira vez no CineMaLIARTE?</label><br>
+				<form>
+					<input type="radio" name="presença" value="sim">Sim<br>
+					<input type="radio" name="presença" value="nao">Não<br>
+				</form>
+				<br>
+				<label for="motivos">Quais motivos levaram a você escolher CineMali?</label><br>
+				<input type="checkbox" name="preco">Bom preço<br>
+				<input type="checkbox" name="conforto">Conforto<br>
+				<input type="checkbox" name="comida">Qualidade da comida<br>
+				<input type="checkbox" name="atendimento">Bom atendimento<br>
+				<input type="checkbox" name="localizacao">Boa localização<br>
+				<input type="checkbox" name="qualidade de imagem ou audio">Qualidade de imagem ou áudio<br><br>
+				<label for="comentarios">Comentários/Sugestões</label><br>
+				<textarea rows="5" cols="50"> Deixe sua opinião</textarea>
+				<br>
+				<br>
+				<button type="submit" value="submit">Confirmar</button>
+
+<!-- Tables -->
+<br>
+<br>
+<br>
+
+
+<footer>		<h1>O cinema 5 Estrelas do Rio. </h1>
+				<h4>Todos os direitos reservados. Verifique a classificação indicativa dos filme. 	</h4>
+</footer>
+
+</body>
+
+</html>
