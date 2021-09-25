@@ -3,6 +3,9 @@
 
 Maliarte Entretenimento Integrativo Digital #MEID 
 
+![GitHub language count](https://img.shields.io/github/languages/count/maliarte/Aplicacao-Web?style=social)
+![GitHub top language](https://img.shields.io/github/languages/top/maliarte/Aplicacao-Web?style=social)
+
 [index-maliarte-hortifruti-1](https://user-images.githubusercontent.com/42978269/115308013-794cfe80-a140-11eb-9eac-451ebf6d070a.jpg)
 ![index-maliarte-hortifruti-2](https://user-images.githubusercontent.com/42978269/115308030-81a53980-a140-11eb-9c93-17c946a34831.jpg)
 ![index-maliarte-hortifruti-3](https://user-images.githubusercontent.com/42978269/115308040-84079380-a140-11eb-9436-67142a695d00.jpg)
