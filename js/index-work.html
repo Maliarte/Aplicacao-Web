@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Doc.inner</title>
+		<meta charset="utf-8">
+		<style>
+			h1 {color:#aaa;}
+			body {background-color:#ffa; margin:8px;}
+		</style>
+	</head>
+	<body>
+		<section id='idLugar'>Modificando o documento pelo JavaScript</section>
+		<script type="text/javascript">
+			{
+				var doc = document.getElementById("idLugar");
+				var nome = prompt("Qual o seu nome?", "(seu nome)");
+				doc.innerHTML = "<h1>Oi Turma!!!</h1>";
+				doc.innerHTML = doc.innerHTML +"<ol>Aprenderemos:"; // cria lista
+				doc.innerHTML = doc.innerHTML +"<li>Variaveis</li>"; // opção 1
+				doc.innerHTML = doc.innerHTML +"<li>Tipos de Dados</li> "; // opção 2
+				doc.innerHTML = doc.innerHTML + "<li>Entrada e Saida</li>";//opção 3
+				doc.innerHTML = doc.innerHTML +"</ol>"; // Finalização da lista
+			}
+		</script>
+	</body>
+</html>

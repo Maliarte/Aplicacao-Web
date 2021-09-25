@@ -1,0 +1,109 @@
+<!-- 
+https://www.w3schools.com/jsref/dom_obj_style.asp
+
+</head>
+    <body id="corpo">
+        <img id= "lampada" src="desligada.png" alt="Desligada" onmouseover="ligar(this)" onmouseout="desligar(this)">
+    </body>
+<script>
+           <script>
+            function ligar(x){
+                x.src = "ligada.png";
+                x.alt = "Ligada";
+                document.getElementById("corpo").style.backgroudColor = "white";
+            }
+            function desligar(x){
+                x.src = "desligada.png";
+                x.alt = "Desligada";
+                document.getElementById("corpo").style.backgroudColor = "rgb(103, 106, 113)";
+            }
+        </script>
+		
+		
+		<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>teste</title>
+	</head>
+	<body id="corFundo">
+		<img src="evento-off.jpg" onmouseover="this.src='evento-on.jpg'; document.getElementById('corFundo').style.backgroundColor='white';" onmouseout="this.src='evento-off.jpg'; document.getElementById('corFundo').style.backgroundColor='black';">	
+	</body>
+</html>
+
+https://pt.wikipedia.org/wiki/Modelo_entidade_relacionamento
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body
+        {
+        background:rgb(103, 106, 113);
+        }
+
+        p
+        {
+        text-align:center;
+        }
+
+
+        h2
+        {
+            font-family: 'Share Tech Mono', monospace;
+            text-align:center;
+            color:white;
+            
+        }
+        h3
+        {
+        color:#ffffff;
+        text-align:center;
+        font-family: 'Sigmar One';
+        opacity: 20%;
+        
+        }
+        p.class
+        {
+           
+            font-family: 'Stint Ultra Condensed', cursive;
+
+        }
+  
+       
+       
+        
+        </style>
+
+        <!-- mude -->
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Share+Tech+Mono&family=Sigmar+One&display=swap" rel="stylesheet">
+ 
+         
+         <!-- swith -->
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+
+         <!-- Saiba mais-->
+         <link rel="preconnect" href="https://fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body id = "corfundo" >
+								 
+    <h3> Switch
+        <h2>Mude tudo que não te muda.</h2>
+            <p class="knowmore">Saiba mais: maliarte.com.br</p>
+        <p>
+
+        <img src="evento-off.jpg" onmouseover="this.src='evento-off.jpg'; document.getElementById('corFundo').style.backgroundColor='white';" onmouseout="this.src='evento-on.jpg'; document.getElementById('corFundo').style.backgroundColor='black';">	
+
+        </p>
+    </h3> 
+    
+    </body>
+
+</html>

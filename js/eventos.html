@@ -1,0 +1,141 @@
+
+																							18.05.21
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo getElementById</title>
+  <script>
+
+/*Manipular elementos por meio do DOM método getElementById()
+
+var elemento = document.getElementById(id);
+
+Encontrar a posicao definida pelo ID e vai retornar a estrutura que quer fazer alteração.
+armazena posicao ou tipo do objeto
+
+Variavel - otimiza o código
+
+pode-se definir esse método como um método para mexer no atributo, no css e no codigo html
+innerHTML - concatenacao para nao sobreescrever a pagina. distingue bem elementos para atuar
+
+helton
+nome = prompt("Digite seu nome:", "Marilia");
+https://www.w3schools.com/js/default.asp
+
+DOM style
+https://www.w3schools.com/jsref/dom_obj_style.asp
+
+https://www.w3schools.com/jsref/dom_obj_style.asp
+
+eventos
+https://www.w3schools.com/jsref/dom_obj_event.asp
+
+*/
+
+
+
+    function mudarCor(novaCor) {
+    var elemento = document.getElementById("para1");
+    elemento.style.color = novaCor;
+  }
+  </script>
+</head>
+<body>
+  <p id="para1">Algum texto de exemplo</p>
+  <button onclick="mudarCor('blue');">Azul</button>
+  <button onclick="mudarCor('red');">Vermelho</button>
+</body>
+</html>
+
+
+
+
+
+
+
+*****
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="utf-8">
+<style>
+body {background-color:#ffa; margin:8px;}
+#img1 { width: 50%; }
+</style>
+</head>
+<body>
+<p> Modificando o documento pelo JavaScript </p>
+<section id='idLugar'></section>
+<section> <img id='img1'> </section>
+<script type="text/javascript">
+{
+/*
+script inline
+
+onclick no body é apontar com 'this.innerHTML' onclick no head será armazenado no navegador e precisará do caminho ao comando;
+
+*/
+
+var lugar = document.getElementById("idLugar");
+var nome = prompt("Qual o seu nome?", "xxxxxx");
+lugar.style.color="purple";
+lugar.innerHTML ="<h1>Oi Turma!</h1>";
+lugar.innerHTML= lugar.innerHTML + "<p> Seu nome: " + nome + "</p>";
+document.getElementById("img1").src="https://img.ibxk.com.br/2020/01/30/30021141299110.jpg?w=1120&h=420&mode=crop&scale=both";
+}
+</script>
+</body>
+</html>
+
+***
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Usando o evento onClick no Javascript Inline</title>
+</head>
+<body>
+<h1> Clique para testar o evento onClick! </h1>
+<button onclick="this.style.backgroundColor='red';">Clique aqui</button>
+</body>
+</html>
+
+
+-----
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Usando o evento onClick no Javascript Inline</title>
+</head>
+<body>
+    <h1 onclick="this.style.color='red';"> 
+      Clique para testar o evento onClick! 
+    </h1> 
+    <button>
+        Clique aqui
+    </button> 
+
+    <article onmouseover="this.innerHTML='Obrigado';" onmouseout="this.innerHTML='Passe o mouse em mim';"
+    style="background-color:pink; width:180px; height:20px;"> Passe o mouse em mim 
+    
+    </article>
+</body>
+</html>
+-->

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exercício Fixação JavaScript</title> 
+	</head>
+	<body style="background-color: Thistle;">
+		<p id="lugar"> </p>
+		<script type="text/javascript">
+			{
+				var nome, idade, gasto, estudo, livre, total;
+
+				nome = prompt("Qual o seu nome?");
+
+				idade = parseInt(prompt("Idade?"));
+
+				gasto = parseFloat(prompt("Gasto diário com locomoção?"));
+
+				estudo = parseFloat(prompt("Tempo semanal de estudo extraclasse?"));
+
+				livre = parseFloat(prompt("Tempo semanal livre?"));
+
+				var numerador = 0, denominador = 0;
+
+				numerador = livre*100;
+				//alert(numerador);
+
+				denominador = livre+estudo;
+				//alert(denominador);
+
+				total = numerador/denominador;
+				
+				document.getElementById("lugar").innerHTML = "<h1>Mostrando as respostas no documento: </h1>";
+
+				document.getElementById("lugar").innerHTML += "<p> Nome: " + nome + "</p>";
+
+				document.getElementById("lugar").innerHTML += "<p> Idade: " + idade + "</p>";
+
+				document.getElementById("lugar").innerHTML += "<p> Gasto diário com locomoção: " + gasto + "</p>";
+
+				document.getElementById("lugar").innerHTML += "<p> Tempo semanal de estudo extraclasse: " + estudo + "</p>";
+
+				document.getElementById("lugar").innerHTML += "<p> Tempo semanal livre: " + livre + "</p>"; 
+
+				document.getElementById("lugar").innerHTML += "<p> Relação tempo livre e tempo de estudo: " + total.toFixed(2) + "</p>";
+				
+				//total aparece como NaN
+			}
+		</script>
+	</body>
+</html>

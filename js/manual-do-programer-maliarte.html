@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Paozinho </title>
+<script type="text/javascript">
+/*
+----------------------------------------------------------------------------------------------------------
+Objeto Global
+
+Um ambiente de hospedagem JS possui nativamente um interpretador da linguagem.
+ao ser iniciado cria um objeto global contendo as propriedades e metodos da linguagem.
+ex: navegador web.
+Ao abrirmos o navegador cria-se um objeto global que na sintaxe javascript chamado window.
+Esse objeto contem todas as propriedades e metodos da linguagem e do respectivo navegador.
+Os metodos para criar caixas de dialogo sao do objeto window.Sendo assim as sintaxes a seguir sao 
+perfeitamente validas.
+window.alert("Ola mundo");
+window.confirm("Tem CTZ?");
+window.prompt("Entre com nome","seu nome");
+
+Para javascript faz-se referencia ao objeto global window com o uso da palavra chave
+this. Logo por equivalencia dos termos acima,temos a palavra this quando usada fora de uma funcao:
+
+
+this.alert("Ola mundo");
+this.confirm("Tem CTZ?");
+this.prompt("Entre com nome","seu nome");
+
+quando dentro de uma funcao refere-se a um objeto que nao window. E um objeto proprio da funcao denominado genericamente de call object.
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+metodos ou funcoes para objeto window destinados a criar caixa de dialógos: nativos do navegador
+
+o método prompt destina-se a entrada de dados do tipo string;
+essa função admite dois argumentos, o primeiro argumento
+arg1, eh uma instrução ao usuário para o que se espera que ele digite no campo de texto.
+o segundo, arg2, um valor default, facultativo, inserido no campo de texto, normalmente para fornecer
+Uma dica da forma de preenchimento do campo.
+
+---
+Escrever HTML com JavaScript
+
+Vimos os três métodos do objeto Window destinados
+a criar caixas de diálogo. Vamos examinar a seguir o método write() do objeto
+Document cuja finalidade é escrever marcação HTML em um documento.
+Uma vez que Document é um objeto de Window, a sintaxe para esse método é
+
+window.document.write("arg1");
+ou simplesmente write("arg");
+
+Ao contrario do método alert() aceita como argumento a marcação HTML e nao somente strings. Assim, veja o script a seguir:
+
+document.write("<p>Alo Mundo <br \>Cheguei,<p>");
+Causa a renderização de um parágrafo e uma quebra de linha
+em HTML
+
+O método write() só funciona como mostrado no exemplo abaixo quando inserido no fluxo do
+documento que está sendo processado. Se chamarmos esse método com uso de link na seção head ou de um
+evento como veremos a seguir, em um documento já carregado, ele irá sobrescrever todo o HTML carregado.
+
+writeln() - este método acrescenta um elemento de nova linha.
+
+---
+Atrelar um evento com Javascript
+
+Eventos são ações capazes de disparar uma reação. Veja este exemplo: clicar um link
+ou colocar o ponteiro do mouse sobre um elemento são eventos.
+Ao clicar um link, desencadeamos uma reação que poderá ser a de abrir uma nova página.
+Ao colocar o ponteiro do mouse sobre um elemento, podemos, por exemplo, alterar
+a opacidade dele.
+
+Eventos viabilizam a interatividade em uma página Web.
+Eventos viabilizam a própria existência do JS. Sem eles não
+teria como funcionar o JS.
+
+Eventos onclick e onload ocorrem respectivamente quando o usuário
+clica um elemento qqr da pagina(nao necessariamente um link)
+e quando um documento é carregado.
+Eventos podem ser disparados pelo usuário, como é o caso de onclick,
+ou ocorrer independentemente da interferência do usuário, como é o caso de onload.
+
+exemplos button;
+
+Note que os eventos previstos na linguagem JS são atributos da HTML cujo valor determina a ação a ser disparada.
+Ao usarmos eventos como atributos de um elemento HTML estamos misturando as camadas de comportamento com a camada
+de estruturação e esta não é uma prática em conformidade com os Padrões Web.
+
+No exemplo a seguir demonstraremos o uso do método write() sendo chamado a partir de um evento após a página ter sido carregada. note que ao clicar no botão para executar o método write() todo o conteúdo da página é substituído pelo conteúdo inserido.
+
+*/
+window.alert("Alo, mundo");
+confirm("Deseja concluir\n até o final?");
+prompt("Ola visitannte\nInforme a data de seu nascimento","dd/mm/aaaa");
+document.write("<p>Alo Mundo <br \>Cheguei!<p>");
+document.write("<h2>O metodo <code>write</code></h2>");
+document.write("<p>O metodo <code>write()</code> do objeto <code>document</code> destina-se a escrever marcacao html com uso de JavaScript </p>");
+
+
+</script>
+</head>
+
+
+<body>
+<button type="button" onclick="alert('caixa de alerta');">Alert</button>
+<button type="button" onclick="alert('caixa de confirmação');">Confirm</button>
+<button type="button" onclick="alert('caixa de dados');">Prompt</button>
+
+<div id="tudo">
+<h1>Capitulo 1</h1>
+<p class="xpto" id="teste">document.write() - Apos carregamento da pagina.</p>
+<p class="nav-arq" id="referencia">Arquivos exemplo:<a href="#">&laquo; anterior</a> | <a href="#">proximo &raquo;</a></p>
+
+<button type="button"
+onclick="document.write('Conteudo inserido apos carregamento da pagina')">
+inserir conteudo</button>
+
+
+
+</body>
+</html>

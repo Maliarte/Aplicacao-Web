@@ -1,0 +1,328 @@
+<!-- 
+		31.05.21
+
+Canvas Coordinates
+ https://www.w3schools.com/graphics/canvas_coordinates.asp
+
+https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+
+criar piano em html5 com javascript with canvas
+https://www.youtube.com/watch?v=W88oVRkGcPU&ab_channel=SylvainSaurel
+
+https://www.w3schools.com/graphics/canvas_clock.asp
+
+1.05.21
+
+Graficos com tag SVG, padrao XML, notei semelhança ao processing.
+https://www.w3schools.com/graphics/
+
+O <svg>elemento HTML é um contêiner para gráficos SVG.
+
+O SVG possui vários métodos para desenhar caminhos, caixas, círculos, texto e imagens gráficas.
+SVG é uma linguagem para descrever gráficos 2D em XML.
+
+O Canvas desenha gráficos 2D em tempo real (com JavaScript).
+
+O SVG é baseado em XML, o que significa que todos os elementos estão disponíveis no DOM SVG. Você pode anexar manipuladores de eventos JavaScript para um elemento.
+
+Em SVG, cada forma desenhada é lembrada como um objeto. Se os atributos de um objeto SVG forem alterados, o navegador pode renderizar novamente a forma automaticamente.
+
+A tela é renderizada pixel por pixel. Na tela, uma vez que o gráfico é desenhado, ele é esquecido pelo navegador. Se sua posição deve ser alterada, toda a cena precisa ser redesenhada, incluindo quaisquer objetos que possam ter sido cobertos pelo gráfico.
+Comparação de Canvas e SVG
+A tabela abaixo mostra algumas diferenças importantes entre Canvas e SVG:
+
+Canvas	SVG
+Resolution dependent
+No support for event handlers
+Poor text rendering capabilities
+You can save the resulting image as .png or .jpg
+Well suited for graphic-intensive games
+Resolution independent
+Support for event handlers
+Best suited for applications with large rendering areas (Google Maps)
+Slow rendering if complex (anything that uses the DOM a lot will be slow)
+Not suited for game applications
+
+SVG significa Scalable Vector Graphics.
+
+SVG define gráficos baseados em vetor em formato XML.
+O que é SVG?
+SVG significa Scalable Vector Graphics
+SVG é usado para definir gráficos baseados em vetores para a Web
+SVG define os gráficos em formato XML
+Cada elemento e cada atributo em arquivos SVG podem ser animados
+SVG é uma recomendação W3C
+SVG integra-se com outros padrões W3C, como DOM e XSL
+
+
+As vantagens de usar SVG em relação a outros formatos de imagem (como JPEG e GIF) são:
+
+As imagens SVG podem ser criadas e editadas com qualquer editor de texto
+As imagens SVG podem ser pesquisadas, indexadas, com script e compactadas
+Imagens SVG são escalonáveis
+As imagens SVG podem ser impressas com alta qualidade em qualquer resolução
+Imagens SVG podem ser ampliadas
+Os gráficos SVG NÃO perdem qualidade se forem ampliados ou redimensionados
+SVG é um padrão aberto
+Arquivos SVG são XML puro
+Criação de imagens SVG
+As imagens SVG podem ser criadas com qualquer editor de texto, mas geralmente é mais conveniente criar imagens SVG com um programa de desenho, como o Inkscape .
+
+Explicação do código SVG:
+
+Uma imagem SVG começa com um elemento <svg>
+Os atributos de largura e altura do elemento <svg> definem a largura e altura da imagem SVG
+O elemento <circle> é usado para desenhar um círculo
+Os atributos cx e cy definem as coordenadas xey do centro do círculo. Se cx e cy não forem definidos, o centro do círculo é definido como (0, 0)
+O atributo r define o raio do círculo
+Os atributos de traço e largura do traço controlam como o contorno de uma forma aparece. Definimos o contorno do círculo para uma "borda" verde de 4 pixels
+O atributo de preenchimento se refere à cor dentro do círculo. Definimos a cor de preenchimento para amarelo
+A tag de fechamento </svg> fecha a imagem SVG
+Nota: Como o SVG é escrito em XML, todos os elementos devem ser fechados corretamente!
+http://w3.unpocodetodo.info/svg/arcos-elipticos.php
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		function desenhaQuadrado(cv,ctx)
+		{
+			x = cv.width; 
+			y = cv.height;
+            x-=40;   
+			y-=40;
+			lado = Math.floor(Math.random()*40);
+			x = Math.floor(Math.random()*x);
+            y = Math.floor(Math.random()*y);
+			ctx.strokeRect(x,y,lado,lado);
+			return;
+		}
+		</script>
+	</head>   
+	<body>
+		<h1 align="center">Canvas</h1>
+		<hr>
+		<h3 align="center">Atualize a pagina!</h3>
+		<canvas id="meuCanvas" width="300" height="480" style="border: 1px solid black">
+		</canvas>  
+
+		<!--chamada da funcao -->
+		<script>
+			var cv = document.getElementById('meuCanvas'); 
+			var ctx = cv.getContext('2d');
+			//alert(cv);
+			//alert(ctx);
+			desenhaQuadrado(cv,ctx);
+			desenhaQuadrado(cv,ctx);
+		</script>
+		<hr>
+
+	<!--TAG SVG 
+		
+		O elemento <rect> é usado para criar um retângulo e variações de uma forma de retângulo:
+			Explicação do código:
+
+Os atributos de largura e altura do elemento <rect> definem a altura e a largura do retângulo
+O atributo style é usado para definir propriedades CSS para o retângulo
+A propriedade CSS fill define a cor de preenchimento do retângulo
+A propriedade CSS stroke-width define a largura da borda do retângulo
+A propriedade CSS stroke define a cor da borda do retângulo
+
+O atributo x define a posição esquerda do retângulo (por exemplo, x = "50" coloca o retângulo 50 px da margem esquerda)
+O atributo y define a posição superior do retângulo (por exemplo, y = "20" coloca o retângulo 20 px da margem superior)
+A propriedade CSS fill-opacity define a opacidade da cor de preenchimento (intervalo legal: 0 a 1)
+A propriedade CSS stroke-opacity define a opacidade da cor do traço (intervalo legal: 0 a 1)
+
+	-->
+	<h1>Circle</h1>
+
+	<svg width="100" height="100">
+	<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+  	</svg>
+	<hr>
+	<h1>Retangulo</h1>
+
+	  <svg width="400" height="100">
+		<rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+	  </svg>
+	<hr>
+	  <h1>Retângulo arredondado SVG</h1>
+
+	  <svg width="400" height="180">
+		<rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+		style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+	  </svg>
+	  <hr>
+	  <h1>SVG STAR</h1>
+
+	  <svg width="300" height="200">
+		<polygon points="100,10 40,198 190,78 10,78 160,198"
+		style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+	  </svg>
+	  <hr>
+	  <h1>Logotipo SVG</h1>
+
+	  <svg height="130" width="500">
+		<defs>
+		  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+			<stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+		  </linearGradient>
+		</defs>
+		<ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+		<text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+		Sorry, your browser does not support inline SVG.
+	  </svg>
+	  <hr>
+	  	<!-- 
+		  A propriedade CSS opacity define o valor de opacidade para todo o elemento (intervalo legal: 0 a 1)
+		-->
+	  <h1>Opacity</h1>
+	  <svg width="400" height="180">
+		<rect x="50" y="20" width="150" height="150"
+		style="fill:blue;stroke:pink;stroke-width:5;opacity:0.5" />
+	  </svg>
+
+	  <hr>
+	  <h1>Caminho SVG - tag PATH</h1>
+	  <!-- 
+		  O elemento <path> é usado para definir um caminho.
+
+Os seguintes comandos estão disponíveis para dados de caminho:
+
+M = moveto
+L = lineto
+H = linha horizontal
+V = linha vertical
+C = curveto
+S = curveto suave
+Q = curva quadrática de Bézier
+T = quadrático liso Bézier curveto
+A = arco elíptico
+Z = caminho próximo
+Nota: Todos os comandos acima também podem ser expressos com letras minúsculas. Letras maiúsculas significam posição absoluta, letras minúsculas significam posição relativamente.
+
+Exercício 
+
+1) https://pt.khanacademy.org/computing/computer-programming/programming/drawing-basics/pc/challenge-simple-snowman
+
+
+2) https://pt.khanacademy.org/computing/computer-programming/programming/drawing-basics/pc/challenge-waving-snowman
+
+
+-
+
+AV2 Site Mockup project
+1. Famous.co
+2. Mockflow
+3. Justinmind
+4. Marvel.app
+5. Studio.design
+
+		-->
+	  <svg height="210" width="400"> 
+		  <path d="M150 50 A50 40 200 1 1 50 50" stroke="blue" fill="transparent"/>
+	 </svg>
+	 <hr>
+	<svg width="500" height="300">
+		<circle cx="100" cy="100" r="80" stroke="black" stroke-width="2" fill="yellow"/>
+		<circle cx="80" cy="70" r="15" stroke="black" stroke-width="1" fill="black"/>
+		<circle cx="125" cy="70" r="15" stroke="black" stroke-width="1" fill="black"/>
+		<path d="M150 100 A50 55 200 1 1 50 100" stroke="red" stroke-width="3" fill="transparent"/>
+	  Sorry, your browser does not support inline SVG.  
+	</svg>	
+	<hr>
+	<h1>Smile</h1>
+
+	<svg width="300" height="300">
+  <circle cx="150" cy="150" r="100" stroke="black" stroke-width="4" fill="yellow" />
+  <circle cx="100" cy="130" r="20" stroke="white" stroke-width="4" fill="black" />
+  <circle cx="200" cy="130" r="20" stroke="white" stroke-width="4" fill="black" />
+</svg>
+<hr>
+<svg height="400" width="400">
+<circle cx="100" cy="140" r="75" stroke="black" fill="yellow"/>
+<circle cx="130" cy="125" r="10" stroke="black" fill="black"/>
+<circle cx="70" cy="125" r="10" stroke="black" fill="black" />
+<path d="M150 150 A50 40 200 1 1 50 150" stroke="red" stroke-width="3" 
+fill="transparent"/>
+  Sorry, your browser does not support inline SVG.
+</svg>
+	</body>
+</html>
+			
+		
+<!--
+------------------------------------------------------
+Com onload 
+
+<script type = "text/javascript">
+function DesenhaQuadrado(cv,ctx){
+x = parseInt(cv.width); y = parseInt(cv.height);
+x-=40; y-=40;
+lado = Math.floor(Math.random()*40);
+x = Math.floor(Math.random()*x); y = Math.floor(Math.random()*y);
+ctx.strokeRect(x, y, lado, lado);
+return; }
+function Iniciar(){
+var cv = document.getElementById("canvas1");
+var ctx = cv.getContext("2d");
+DesenhaQuadrado(cv,ctx);
+DesenhaQuadrado(cv,ctx);
+return; }
+</script>
+</head>
+
+<body onload=“Iniciar()"> <!-- quando a página é carregada 
+<canvas id="canvas1" width="480px" height="300px" style="border:1px solid black"></canvas>
+</body>
+
+function drawfillTriangle(cv, ctx) {
+ctx.beginPath();
+ctx.moveTo(100, 150);
+ctx.lineTo(250, 75);
+ctx.lineTo(125, 30);
+ctx.closePath();
+ctx.lineWidth = 5; //estilo: largura da linha
+ctx.stroke();
+ctx.fillStyle = "red";
+ctx.fill();
+}
+
+---------------------------
+ TRIANGULO VERMELHO
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Canvas7</title>
+		<script type = "text/javascript">
+			function drawfillTriangle(cv, ctx) {
+				ctx.beginPath();
+				ctx.moveTo(100, 150);
+				ctx.lineTo(250, 75);
+				ctx.lineTo(125, 30);
+				ctx.closePath();
+				ctx.lineWidth = 5; //estilo: largura da linha
+				ctx.stroke();
+				ctx.fillStyle = "red";
+				ctx.fill();
+				return;
+			}
+			function Iniciar(){
+				var cv = document.getElementById("canvas1");
+				var ctx = cv.getContext("2d");
+				drawfillTriangle(cv, ctx);
+				return; 
+			}
+		</script>
+	</head>
+	<body onload="Iniciar()">  
+		<canvas id="canvas1" width="480px" height="300px" style="border:1px solid black"></canvas>
+	</body>
+</html> 
+-->

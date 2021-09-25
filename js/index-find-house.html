@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houde finder</title>
+    <script type="text/javascript">
+    
+    function validateNumber(value){
+        //Valida o numero
+        //if (!isNumber(value))
+        alert('Entre com o numero: ');
+    }
+
+    function validateZIPCode(value){
+        //Valide o codigo postal
+        //if (!isZIPcode(value))
+        alert('Entre o CEP no formulário: xxxxx. ');
+  
+    }
+
+    function calcPrice() {
+         //zipCode - personalizado 
+        var maxPrice = document.getElementById("income").value * 4;
+        alert("Você pode comprar um Pacote de até  $"+ maxPrice +".");
+    
+    }
+
+    //findHouse  - personalizado: O codigo personalizado que encontra as casas coincidentes
+    
+
+    function findHouse(form) {
+        //zipCode - personalizado 
+        //um local de armazenamento usado para manter o codigo postal fornecido pelo user
+        var bedrooms= document.getElementById("bedrooms").value;
+        var zipCode = document.getElementById("zip").value;
+
+        //exiba uma lista de casas coincidentes a partir do servidor
+
+        form.submit();
+    }
+
+    </script>
+</head>
+
+
+<body>
+
+    <div id="frame">
+        <div id="header"> pronto para localizar uma nova casa?        </div>
+        <div id ="left">
+            <img src ="#" alt="trocar por casa"/>
+        </div>
+        <form name ="orderform" action="..."method="POST">
+
+            <!-- 
+                Entrando com numero de quartos
+            onblur: Indica que o user foi para o proximo campo de entrada.
+
+            value: p vaçpr atiaç dp ca,´p de emtrada.
+
+            onclick: Indica que o botao Shop foi clicado.
+            -->
+            <div class="field">Entre com o número de quartos: 
+                <input id="income" type="text" size "12" 
+                onblur="validateNumber(this.value)"/>
+
+            </div>
+            <div class="field">Entre com o CEP: 
+                <input id="zip" type="text" size "10" 
+                onblur="validateZipCode(this.value)"/>
+
+            </div>
+            <input type="button" value="calcula o preço" 
+            onclick="calcPrice();"/>
+            <input type="button" value="localizar casas" 
+            onclick="findHouses(this.form);"/>
+
+         </form> 
+
+    </div>
+    
+</body>
+</html>

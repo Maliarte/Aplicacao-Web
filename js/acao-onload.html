@@ -1,0 +1,101 @@
+<!--
+16.05.2021
+
+DOCTYPE html
+<html>
+	<head>
+		<style>
+			body {
+				color: green;
+				font-family: Verdana;
+				background-color: NavajoWhite;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function myFunc(){
+				document.write("<p><h1>Sobrescreve o conteúdo anterior</h1></p>");
+			}
+		</script>
+	</head>
+	<body onload="myFunc()">
+		Blah Blah Blah
+	</body>
+</html>
+
+                         
+<!DOCTYPE>    
+<html> 
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+document.write("<title>Título da página</title>");  
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write("<h1>Conteúdo da página</h1>");
+</script>
+</body>
+</html>
+
+
+
+Abaixo é um metodo que não apaga as configuracoes de css como document.write
+.innerHTML é um método
+
+juncao dos objetos e metodos DOM CAMINHO[js] '.innerHTML'
+classe[html/css]
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="utf-8">
+		<style>
+			h1 {color:#aaa;}
+			body {background-color:#ffa;margin:8px;}
+		</style>
+	</head>
+	<body>
+		<p id='idLugar'> </p>
+		<script type="text/javascript">
+			var lugar;
+			lugar = document.getElementById('idLugar');
+			lugar.innerHTML = "<h1>Oi Turma!</h1>";
+		</script>
+	</body>
+</html>
+
+
+Criando elementos em tempo de execução
+Atualizando pagina junto com interacoes do usuario
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="utf-8">
+		<style>
+			h1 {color:#aaa;}
+			body {background-color:#ffa; margin:8px;}
+		</style>
+	</head>
+	<body>
+		<section id='idLugar'>Modificando o documento pelo JavaScript</section>
+		<script type="text/javascript">
+			{
+				var doc = document.getElementById("idLugar");
+				var nome = prompt("Qual o seu nome?", "(seu nome)");
+				doc.innerHTML = "<h1>Oi Turma!!!</h1>";
+				doc.innerHTML = doc.innerHTML +"<ol>Aprenderemos:"; // cria lista
+				doc.innerHTML = doc.innerHTML +"<li>Variaveis</li>"; // opção 1
+				doc.innerHTML = doc.innerHTML +"<li>Tipos de Dados</li> "; // opção 2
+				doc.innerHTML = doc.innerHTML + "<li>Entrada e Saida</li>";//opção 3
+				doc.innerHTML = doc.innerHTML +"</ol>"; // Finalização da lista
+			}
+		</script>
+	</body>
+</html>
