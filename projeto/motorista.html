@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!--responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto AV2">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Marília Silva | Maliarte">
+    <title>Construção de Aplicações Web - FAETERJ</title>
+    <!--FONTE H1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .aside {
+            padding-top: 10px;
+            float: left;
+            width: 20%;
+        }
+
+        .main {
+            float: left;
+            width: 60%;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .right {
+            background-color: rgb(15, 114, 2);
+            color: #ddd;
+            float: left;
+            width: 20%;
+            padding: 10px 15px;
+            margin-top: 7px;
+            border-radius: 5%;
+
+        }
+
+        .right a:hover {
+            opacity: 80%;
+        }
+
+        /* Para Tablets: */
+        @media only screen and (max-width:800px) {
+
+            .aside.main {
+                width: 80%;
+                padding: 0;
+            }
+
+            .right {
+                width: 100%;
+            }
+        }
+
+        /* Para Celulares: */
+        @media only screen and (max-width:500px) {
+
+            .aside .main .right {
+                width: 100%;
+            }
+
+
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                font-family: 'Bungee Shade';
+                color: #000000;
+            }
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            font-family: 'Bungee Shade';
+
+        }
+
+        .active {
+            background-color: #04AA6D;
+            color: rgb(0, 0, 0);
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: rgb(0, 0, 0);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #00eb0c;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .topnav a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 251, 0);
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+            .topnav a:not(:first-child),
+            .dropdown .dropbtn {
+                display: none;
+            }
+
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .topnav.responsive .dropdown {
+            float: none;
+        }
+
+        .topnav.responsive .dropdown-content {
+            position: relative;
+        }
+
+        .topnav.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+
+        .topnav {
+            background-color: rgb(68, 214, 0);
+            overflow: hidden;
+            color: #000000;
+        }
+
+        /* estilo de link dentro da navegação*/
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* btn ativo  HOME*/
+        .active {
+            background-color: #d60000;
+            color: rgb(0, 0, 0);
+        }
+
+        /* esconda o link devera abrir e feche o menu para telas pequenas */
+        .topnav .icon {
+            display: none;
+        }
+
+        /* jogando para baixo o conteiner - reposiocionando o container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* estilizando o menu aberto para caber na tela */
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        /* estilizando a caixa (esconder por padrão) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* estilo de links internos */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Adiciona background preto no link de topnav e aciona botao ativo on hover */
+        .topnav a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: rgb(255, 251, 0);
+            color: rgb(0, 0, 0);
+        }
+
+        /* Adicona fundo branco para link ativo */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Mostra o menu drop quando o usuario move o mouse por cima do btn de drop down */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Quando a tela for menor que 600 px, esconde todos links, exceto para a primeira vez na pagina("Home"). Mostra o link que pode abrir e fechar o topnav (.icon) */
+
+        @media screen and (max-width: 600px) {
+
+            .topnav a:not(:first-child),
+            .dropdown .dropbtn {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /*
+     A classe"responsive" foi adicionada na navegação com JS assim quando o usuario clicar no icone de "hamburgue". Essa class adapta o menu para caber em telas pequenas  (display os links verticalmente ao inves de estarem na disposição original(horizontal) 
+    */
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .topnav.responsive .dropdown {
+                float: none;
+            }
+
+            .topnav.responsive .dropdown-content {
+                position: relative;
+            }
+
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+         /* Setando Forms Responsivo */
+         input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* limpa floats depois da colum */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Respondivo altera disposicao das colunas */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+        /* Fim do Forms Responsivo */
+
+        .centralize p{
+            text-align: center;
+            font-size: 20px;
+        }
+        .videoF {
+            text-align: center;
+        }
+        h1{
+            font-family: 'Bungee Shade';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index-mooh.html" class="active">Home</a>
+        <a href="motorista.html">Motoristas</a>
+        <a href="anunciante.html">Anunciantes</a>
+       
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+    </div>
+    <!--Ativando menu para responsividade com js-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        function validar() {
+
+            var nome = document.getElementById("name");
+            var email = document.getElementById("email");
+            //alert(document.getElementById("name").value);
+
+            // verificar se o nome está vazio 
+            /* teste 1: passando string para maiusculo SO CARACTERES DE LETRA
+            !(toUpperCase(nome.value) > "A" || toUpperCase(nome.value) < "Z"))*/
+            //includes:pesquisando se tem espaço vazio, com nome completo tem espaço vazio: problema.
+
+            if (!nome.value || (nome.value).includes(" ")) {
+            alert("Nome não informado");
+
+            // Deixa o input com o focus
+            nome.onfocus();
+            
+            return;
+          }
+          if (!email.value || (email.value).includes(" ")) {
+            alert("E-mail não informado");
+            email.focus();
+            return;
+          }
+          
+        }
+        
+    </script>
+
+    <div class="centralize">
+        <h1 style="text-align: center;">Podemos cada vez MAIS.</h1>
+        <p style="font-size:2vw; font-family: verdana;">Comprometidos com a redução da emissão de CO2.<br>
+        </p>
+    </div>
+
+    <div class="videoF">
+        <p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ht-5xii_w_M"title="YouTube video player" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen >
+            </iframe>
+        </p>
+        <p style="font-size:2vw;">
+        Estamos preparados para a Energia Solar e Veículos Livres de derivados de Petrólio<br>
+        Gaste menos e ganhe MAIS. Venha aproveitar o FUTURO como você Merece.<br></p>
+    </div>
+    <br>
+    <br>
+    <hr>
+    </div>
+   <!-- FORMS Sem ACTION nem METHOD  Grid-->
+   <div class="container">
+    <form>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Informe seu Nome</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="name" name="name" placeholder="Seu nome aqui.">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lidade">Informe seu E-mail</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="email" name="email" placeholder="Seu email aqui.">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="country">Informe seu Municipio</label>
+            </div>
+            <div class="col-75">
+                <select id="country" name="country">
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="São Gonçalo">São Gonçalo</option>
+                    <option value="Nova Iguaçu">Nova Iguaçu</option>
+                    <option value="Duque de Caxias">Duque de Caxias</option>
+                    <option value="Niterói">Niterói</option>
+                    <option value="Belford Roxo">Belford Roxo</option>
+                    <option value="Campos do Goytacazes">Campos do Goytacazes</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">O quê lhe Motiva <pre style ="color:red">facultativo</pre></label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Escreva suas experiências e objetivos sendo colaborador da cia."
+                    style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit" onclick="validar()">
+        </div>
+    </form>
+</div>
+
+<script>
+
+
+</script>
+
+    <div style="background-color:#f1f1f1;text-align:center;padding:10px;margin-top:7px;font-size:12px;"> Projeto final da Disciplina de Construção e Aplicacao Web.</div>
+</body>
+
+</html>
