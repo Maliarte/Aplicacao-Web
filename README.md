@@ -1,7 +1,7 @@
 # Aplicacao-Web
 **Interfaces gráficas desenvolvidas em HTML5, CSS3 e JS.**
 
-Entretenimento Integrativo Digital #EID disponível gratuitamente: [Inscreva-se!](https://www.youtube.com/user/Mariliaseeing)
+Maliarte Entretenimento Integrativo Digital #MEID disponível gratuitamente: [Inscreva-se!](https://www.youtube.com/user/Mariliaseeing)
 
 [index-maliarte-hortifruti-1](https://user-images.githubusercontent.com/42978269/115308013-794cfe80-a140-11eb-9eac-451ebf6d070a.jpg)
 ![index-maliarte-hortifruti-2](https://user-images.githubusercontent.com/42978269/115308030-81a53980-a140-11eb-9c93-17c946a34831.jpg)
