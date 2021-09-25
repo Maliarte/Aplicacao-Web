@@ -1,0 +1,143 @@
+<!--
+
+    Crie uma página em HTML que permita a entrada de 3 notas + seus respectivos pesos, calcule a média ponderada e ao apresentar o resultado também use o esquema de cores a seguir: (a) notas maiores ou iguais a 6,0 em verde, (b) notas abaixo de 4,0 em vermelho e (c) demais notas em amarelo. Pode ser a letra ou o fundo na cor indicada. Será avaliado o código javascript, a apresentação da página (CSS) e a estrutura do HTML.
+
+    https://pt.khanacademy.org/computing/computer-programming/html-js-jquery/jquery-intro/v/jquery-meet-the-inventor
+-->
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trabalho AV2">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Marília Silva | Maliarte">
+   <title>Calculo Media Ponderada por Marilia</title>
+   
+   <style>
+       body 
+       {
+           background-color: rgba(0, 64, 167, 0.753);
+           font-weight: 600;
+       }
+       p
+       {
+          
+          color:black;
+       }
+       header
+       {
+           background-color: rgba(167, 190, 255, 0.966);
+           height: 90px;
+           margin-bottom: 20px;
+
+       }
+       
+       h1
+       {    
+           font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+           color:white;
+           text-align: center;
+           padding-top: 30px;
+       }
+       #centralize
+       {
+           margin: 50px;
+           text-align: center;
+       }
+       #resultado
+       {
+           background-color: rgb(255, 255, 255);
+       }
+       #rodape
+       {
+        color:white;
+        text-align: center;
+        font-weight: 100;
+
+       }
+   </style>
+
+   <script type="text/javascript">
+
+    function media() {
+
+     var nota1 = parseFloat(document.getElementById("nota1").value);
+     var peso1 = parseInt(document.getElementById("peso1").value);
+     var nota2 = parseFloat(document.getElementById("nota2").value);
+     var peso2 = parseInt(document.getElementById("peso2").value);
+     var nota3 = parseFloat(document.getElementById("nota3").value);
+     var peso3 = parseInt(document.getElementById("peso3").value);
+
+        
+     var somaPeso=(peso1 + peso2 + peso3);
+     var media = (((nota1*peso1) + (nota2 *peso2) + (nota3*peso3))/somaPeso) ;
+     
+     var resultado = document.getElementById("resultado").innerHTML;
+
+    /*
+    testes iniciais
+    
+    if(media >= 7)
+      if (media==10)
+       alert("Aprovado, acima da Media.");
+      else
+       alert("Parabéns você foi aprovado, sua Media eh: "+media);
+     else
+      alert("Reprovado!")
+
+
+      (a) notas maiores ou iguais a 6,0 em verde, (b) notas abaixo de 4,0 em vermelho e (c) demais notas em amarelo.
+    }  
+    */
+    
+    if(media >= 6)
+    {
+    document.getElementById("resultado").style.color = "green";
+    alert('Parabéns, você foi Aprovado(a)!')
+    } else if (media < 4) {
+            document.getElementById("resultado").style.color = "red";
+            alert('Reprovado(a)'!)
+            } else {
+                    document.getElementById("resultado").style.color = "yellow";
+                    alert('Estude para Avaliação Final!')
+                   }
+        return resultado;       
+    }
+
+    </script>
+
+ </head>
+
+ <body>
+     <header>
+        <h1>Calculadora de Médias</h1>
+     </header>
+
+    <div id="centralize">
+        <br>Primeira nota <input placeholder="Avaliação 1" id="nota1"type="number"><input placeholder="Peso da AV1"id="peso1" type="number">
+        <br/>
+        <br/>Segunda nota <input placeholder="Avaliação 2"id="nota2" type="number"><input placeholder="Peso da AV2"id="peso2" type="number">
+        <br/>
+        <br/>Terceira nota <input placeholder="Avaliação 3" id="nota3" type="number"><input  placeholder="Peso da AV3"id="peso3" type="number">
+        <br/><hr><br>
+
+
+        <button onclick="media()"> Calcular Media</button>
+
+        <p id="resultado"> 
+                    (a) notas maiores ou iguais a 6,0 em verde.
+                    (b) notas abaixo de 4,0 em vermelho. 
+                    (c) demais notas em amarelo.
+        </p>
+    </div>
+    
+			<footer style="background:rgba(167, 190, 255, 0.966);">
+                <p id="rodape">Pagina criada para 2CAW - Marilia Silva</p>
+                </footer>	
+ </body>
+</html>
+
+
